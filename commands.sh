@@ -27,7 +27,7 @@ echo "${WORD}ing is fun"
 # This doesn't work:
 echo "$WORDing is fun"
 
-# Creare a new variable
+# Create a new variable
 ENDING='ed'
 
 # Combine the two variables.
