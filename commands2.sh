@@ -23,9 +23,18 @@ fi
 
 # Getting info on the commands
 type -a [[ # Expected Output: [[ is a shell keyword
-type -a whoami  # Expected Output is that whoami is a program located in a directory
+type -a whoami  # Expected Output is that whoami is a program located in the file system
 type -a test # Expected output: test is a shell builtin
 
 help [[ # Display a description of the [[ command
 man whoami # Display a manual with descriptions about the program
 help test | less # Display the description of the test command and pipe it to a pager for easier readability
+
+# The [ is one of the old systax for [[
+type -a [ 
+    # Expected Output: [[ is a shell builtin
+    # Expected Output: [ is /usr/bin/[
+
+ls -l /usr/bin/[ # Expected output: -rwxr-xr-x 1 root root 51384 Jan 18  2018 '/usr/bin/['
+
+# [ is a shell builtin and a file in the file system that is executable
