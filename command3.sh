@@ -17,4 +17,14 @@ fi
 # Display the username.
 USER_NAME=$(id -un)
 
+# Test if the command succeeded.
+if [[ "${?}" -ne 0 ]] # ? return the exit code of the most recently executed command: id -un
+then
+  echo 'The id command did not execute successfully.' 
+  exit 1 
+fi
+
 echo "Your username is ${USER_NAME}"
+
+
+exit 0 # If the exit code is ommited, then the most recent exit status will be use as the exit status
