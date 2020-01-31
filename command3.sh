@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Display the UID and username of the user executing this script.
-# Display if the user is the norman or not
+# Display if the user is norman or not
 
 # Display the UID.
 echo "Your UID is ${UID}"
@@ -26,5 +26,14 @@ fi
 
 echo "Your username is ${USER_NAME}"
 
+# You can use a string test conditional.
+USER_NAME_TO_TEST_FOR='norman'
+if [[ "${USER_NAME}" = "${USER_NAME_TO_TEST_FOR}" ]]
+then
+  echo "Your username matches ${USER_NAME_TO_TEST_FOR}."
+else
+  echo "Your username does not match ${USER_NAME_TO_TEST_FOR}."
+  exit 1
+fi
 
 exit 0 # If the exit code is ommited, then the most recent exit status will be use as the exit status
