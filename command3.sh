@@ -36,4 +36,5 @@ else
   exit 1
 fi
 
+echo "Exit successfully with exit code: 0"
 exit 0 # If the exit code is ommited, then the most recent exit status will be use as the exit status
