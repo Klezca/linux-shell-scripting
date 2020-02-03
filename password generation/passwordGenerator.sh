@@ -10,3 +10,7 @@ echo "${PASSWORD}${PASSWORD}${PASSWORD}"
 # Use the current date/time as the password
 PASSWORD=$(date +%s%N) # Use the "man date" command to see what %s and %N does
 echo "${PASSWORD}"
+
+# Better password using the first 20 characters of a 256 hash of the the current date/time
+PASSWORD=$(date +%S%N | sha256sum | head -c20)
+echo "${PASSWORD}"
