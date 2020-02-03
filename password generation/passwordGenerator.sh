@@ -14,3 +14,7 @@ echo "${PASSWORD}"
 # Better password using the first 20 characters of a 256 hash of the the current date/time
 PASSWORD=$(date +%S%N | sha256sum | head -c20)
 echo "${PASSWORD}"
+
+# Adding some randoms number to the above before hashing
+PASSWORD=$(date +%S%N${RANDOM} | sha256sum | head -c20)
+echo "${PASSWORD}"
