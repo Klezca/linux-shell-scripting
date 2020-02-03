@@ -4,7 +4,6 @@
 
 # Use random number of password
 PASSWORD="${RANDOM}"
-
 echo "${PASSWORD}${PASSWORD}${PASSWORD}"
 
 # Use the current date/time as the password
@@ -18,3 +17,7 @@ echo "${PASSWORD}"
 # Adding some randoms number to the above before hashing
 PASSWORD=$(date +%S%N${RANDOM} | sha256sum | head -c20)
 echo "${PASSWORD}"
+
+# Append a random special character to the password 
+SPECIALCHAR=${echo '!@#$%^&*()_-=+' | fold -w1 | shuf | head -c1}
+echo "${PASSWORD}${SPECIALCHAR}"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script demostrates how to 
-# Add a string of special characters to the SPECIALCHAR variable
+# add a string of special characters to the SPECIALCHAR variable
 SPECIALCHAR='!@#$%^&*()_-=+'
 echo "${SPECIALCHAR}"
 
